@@ -46,23 +46,27 @@ Un program de calculator stochează date utilizând variabile. O variabilă este
 
 O variabilă are trei proprietăți principale:
 
-* **Numele** ei, care o identifică. Numele unei variabile poate conține litere mari și mici, numere (nu în prima poziție) și caractere precum semnul dolarului ($) sau bară jos (_).
+* **Numele **ei, care o identifică. Numele unei variabile poate conține litere mari și mici, numere (nu în prima poziție) și caractere precum semnul dolarului ($) sau bară jos (_).
 
-* **Valoarea** sa, care este informația stocată în variabilă.
+* **Valoarea **sa, care este informația stocată în variabilă.
 
-* **Tipul** său, care determină rolul și acțiunile disponibile / aplicabile pentru variabilă.
+* **Tipul **său, care determină rolul și acțiunile disponibile / aplicabile pentru variabilă.
 
-În JavaScript nu trebuiesc definite explicit tipurile de variabile. Tipul său este dedus din valoarea stocată în variabilă și se poate schimba în timp ce programul rulează. De aceea spunem că JavaScript este un** limbaj scris dinamic**. Alte limbaje, cum ar fi C sau Java, necesită întotdeauna definirea tipurilor de variabile. Aceasta se numește **scriere statică**.
+În JavaScript nu trebuiesc definite explicit tipurile de variabile. Tipul său este dedus din valoarea stocată în variabilă și se poate schimba în timp ce programul rulează. De aceea spunem că JavaScript este un** limbaj scris dinamic**. Alte limbaje, cum ar fi C sau Java, necesită întotdeauna definirea tipurilor de variabile. Aceasta se numește **scriere statică **.
 
 ## **Declararea unei variabile**
 
 Înainte de a putea stoca informații într-o variabilă, trebuie să o creați! Crearea ei se numește declararea unei variabile. Declararea unei variabile înseamnă că calculatorul își rezervă memorie în care să stocheze variabila. Programul poate citi sau scrie date în această zonă de memorie prin manipularea variabilei.
 
 Iată un exemplu de cod care declară o variabilă și afișează conținutul acesteia:
+
 ```javascript
-let a;
+  
+    let a;
 console.log(a);
+  
 ```
+
 
 În JavaScript, declarați o variabilă cu cuvântul cheie **let** urmat de numele variabilei. În acest exemplu, este apelată variabila creată a.
 
@@ -81,10 +85,13 @@ Rețineți că rezultatul este **undefined**. Acesta este un tip special al Java
 Consultați exemplul de mai jos:
 
 ```javascript
-let a;
+  
+    let a;
 a = 3.14;
 console.log(a);
+  
 ```
+
 
 ![image alt text](image_3.png)
 
@@ -95,20 +102,23 @@ Aveți grijă să nu confundați operatorul de asignare, atribuire = cu egalitat
 De asemenea, puteți combina declararea unei variabile și atribuirea unei valori într-o singură linie. Doar conștientizați că, în această linie, faceți două lucruri simultan:
 
 ```javascript
-let a = 3.14;
+  
+    let a = 3.14;
 console.log(a);
+  
 ```
+
 
 ## **Declarând o variabilă constantă**
 
 Dacă valoarea inițială a unei variabile nu se va schimba niciodată pe toată durata execuției programului, această variabilă este numită constantă . Această constanță poate fi impusă prin utilizarea cuvântului cheie **const **în loc de **let **în declararea acesteia. Astfel, programul este mai expresiv și încercările ulterioare de a modifica variabila pot fi detectate ca erori.
 
-<table>
-  <tr>
-    <td>const a = 3.14; // The value of a cannot be modified
-a = 6.28;       // Impossible!</td>
-  </tr>
-</table>
+```javascript
+  
+    const a = 3.14; // The value of a cannot be modified
+a = 6.28;       // Impossible!
+  
+```
 
 
 ![image alt text](image_4.png)
@@ -119,108 +129,108 @@ De asemenea, puteți mări sau micșora valoarea unui număr cu += și ++. Acest
 
 În exemplul următor, liniile 2 și 3 măresc fiecare valoarea variabilei b cu 1.
 
-<table>
-  <tr>
-    <td>let b = 0;      // b contains 0
+```javascript
+  
+    let b = 0;      // b contains 0
 b += 1;         // b contains 1
 b++;            // b contains 2
-console.log(b); // Shows 2</td>
-  </tr>
-</table>
+console.log(b); // Shows 2
+  
+```
 
 
 ## **Domeniu de aplicare al unei variabile**
 
 Domeniul de aplicare al unei variabile este acea parte a programului în care variabila este vizibilă și utilizabilă. Variabilele declarate cu **let **sau **const **sunt **block-scoped**: vizibilitatea acestora este limitată la blocul în care sunt declarate (și la fiecare sub-bloc, dacă există). În JavaScript și multe alte limbaje de programare, un bloc de cod este o porțiune a unui program delimitat de o pereche de acolade de deschidere și închidere. Implicit, un program JavaScript formează un bloc de cod.
 
-<table>
-  <tr>
-    <td>let nb1 = 0;
+```javascript
+  
+    let nb1 = 0;
 {
   nb1 = 1; // OK : nb1 is declared in the parent block
   const nb2 = 0;
 }
 console.log(nb1); // OK : nb1 is declared in the current block
-console.log(nb2); // Error! nb2 is not visible here</td>
-  </tr>
-</table>
+console.log(nb2); // Error! nb2 is not visible here
+  
+```
 
 
 # Expresii
 
 O expresie este o bucată de cod care produce o valoare. O expresie este creată prin combinarea variabilelor, valorilor și operatorilor. Fiecare expresie are o valoare și deci un tip. Calcularea valorii unei expresii se numește evaluare. În cursul evaluării, variabilele sunt înlocuite cu valorile lor.
 
-<table>
-  <tr>
-    <td>// 3 is an expression whose value is 3
+```javascript
+  
+    // 3 is an expression whose value is 3
 const c = 3;
 // c is an expression whose value is the value of c (3 here)
 let d = c;
 // (d + 1) is an expression whose value is d's + 1 (4 here)
 d = d + 1; // d now contains the value 4
-console.log(d); // Show 4</td>
-  </tr>
-</table>
+console.log(d); // Show 4
+  
+```
 
 
 Prioritatea operatorilor în interiorul unei expresii este aceeași ca în matematică. Cu toate acestea, o expresie poate integra paranteze care modifică aceste priorități.
 
-<table>
-  <tr>
-    <td>let e = 3 + 2 * 4; // e contains 11 (3 + 8)
-e = (3 + 2) * 4;   // e contains 20 (5 * 4)</td>
-  </tr>
-</table>
+```javascript
+  
+    let e = 3 + 2 * 4; // e contains 11 (3 + 8)
+e = (3 + 2) * 4;   // e contains 20 (5 * 4)
+  
+```
 
 
 Este posibil să includeți expresii într-un șir folosind **backticks **(`) pentru a delimita șirul. Un astfel de șir este numit un șablon literal . În interiorul unui șablon literal, expresiile sunt identificate de sintaxa ${expresie}.
 
 Acest lucru este adesea folosit pentru a crea șiruri care conțin valorile unor variabile.
 
-<table>
-  <tr>
-    <td>const country = "France";
+```javascript
+  
+    const country = "France";
 console.log(`I live in ${country}`); // Show "I live in France"
 const x = 3;
 const y = 7;
-console.log(`${x} + ${y} = ${x + y}`); // Show "3 + 7 = 10"</td>
-  </tr>
-</table>
+console.log(`${x} + ${y} = ${x + y}`); // Show "3 + 7 = 10"
+  
+```
 
 
 ## **Conversia tipului variabilelor, expresiilor**
 
 Evaluarea unei expresii poate avea ca rezultat conversii de tip. Acestea se numesc conversii implicite, deoarece se întâmplă automat fără intervenția programatorului. De exemplu, folosirea operatorului + într-un șir și un număr determină concatenarea celor două valori într-un rezultat de șir.
 
-<table>
-  <tr>
-    <td>const f = 100;
+```javascript
+  
+    const f = 100;
 // Show "Variable f contains the value 100"
-console.log("Variable f contains the value " + f);</td>
-  </tr>
-</table>
+console.log("Variable f contains the value " + f);
+  
+```
 
 
 JavaScript este extrem de tolerant în ceea ce privește conversia de tip. Cu toate acestea, uneori conversia nu este posibilă. Dacă un număr nu reușește să convertească, veți obține rezultatul **NaN**(nu e un număr - Not a Number).
 
-<table>
-  <tr>
-    <td>const g = "five" * 2;
-console.log(g); // Show NaN</td>
-  </tr>
-</table>
+```javascript
+  
+    const g = "five" * 2;
+console.log(g); // Show NaN
+  
+```
 
 
 Uneori veți dori să convertiți valoarea altui tip. Aceasta se numește conversie explicită. JavaScript are comenzile Number() și String() care convertesc valoarea între paranteză la un număr sau un șir.
 
-<table>
-  <tr>
-    <td>const h = "5";
+```javascript
+  
+    const h = "5";
 console.log(h + 1); // Concatenation: show the string "51"
 const i = Number("5");
-console.log(i + 1); // Numerical addition: show the number 6</td>
-  </tr>
-</table>
+console.log(i + 1); // Numerical addition: show the number 6
+  
+```
 
 
 ## **Interacțiunile utilizatorilor**
@@ -229,12 +239,12 @@ console.log(i + 1); // Numerical addition: show the number 6</td>
 
 Odată ce începeți să utilizați variabilele, puteți scrie programe care fac schimb de informații cu utilizatorul.
 
-<table>
-  <tr>
-    <td>const name = prompt("Enter your first name:");
-alert(`Hello, ${name}`);</td>
-  </tr>
-</table>
+```javascript
+  
+    const name = prompt("Enter your first name:");
+alert(`Hello, ${name}`);
+  
+```
 
 
 În timpul executării, apare o casetă de dialog care vă solicită numele.
@@ -255,35 +265,35 @@ Ambele comenzi **console.log()** și **alert() **(întâlnite în capitolul prec
 
 console.log() poate afișa simultan câteva valori separate prin virgulă.
 
-<table>
-  <tr>
-    <td>const temp1 = 36.9;
+```javascript
+  
+    const temp1 = 36.9;
 const temp2 = 37.6;
 const temp3 = 37.1;
-console.log(temp1, temp2, temp3); // Show "36.9 37.6 37.1"</td>
-  </tr>
-</table>
+console.log(temp1, temp2, temp3); // Show "36.9 37.6 37.1"
+  
+```
 
 
 ### Introducerea unui număr
 
 Indiferent de datele introduse, prompt()comanda întoarce întotdeauna o valoare de șir. Dacă această valoare trebuie utilizată în expresii numerice, aceasta trebuie convertită într-un număr cu comanda Number().
 
-<table>
-  <tr>
-    <td>const input = prompt("Enter a number:"); // input's type is string
-const nb = Number(input); // nb's type is number</td>
-  </tr>
-</table>
+```javascript
+  
+    const input = prompt("Enter a number:"); // input's type is string
+const nb = Number(input); // nb's type is number
+  
+```
 
 
 Ambele operațiuni pot fi combinate într-o singură linie pentru același rezultat.
 
-<table>
-  <tr>
-    <td>const nb = Number(prompt("Enter a number:")); // nb's type is number</td>
-  </tr>
-</table>
+```javascript
+  
+    const nb = Number(prompt("Enter a number:")); // nb's type is number
+  
+```
 
 
 În acest exemplu, input-ul utilizatorului este convertit direct într-o valoare numerică dec omanda Number() și stocat în variabila **nb**.
@@ -294,24 +304,24 @@ Pentru a închide acest capitol, să discutăm despre denumirea variabilelor. Co
 
 Cu toate acestea, numirea variabilelor poate face codul mult mai ușor de citit. Consultați aceste două exemple:
 
-<table>
-  <tr>
-    <td>const a = 5.5;
+```javascript
+  
+    const a = 5.5;
 const b = 3.14;
 const c = 2 * a * b;
-console.log(c);</td>
-  </tr>
-</table>
+console.log(c);
+  
+```
 
 
-<table>
-  <tr>
-    <td>const radius = 5.5;
+```javascript
+  
+    const radius = 5.5;
 const pi = 3.14;
 const perimeter = 2 * pi * radius;
-console.log(perimeter);</td>
-  </tr>
-</table>
+console.log(perimeter);
+  
+```
 
 
 Ele funcționează în același mod, dar a doua versiune este mult mai ușor de înțeles.
@@ -330,9 +340,9 @@ Scrieți un program care solicită utilizatorului numele și prenumele lui. Prog
 
 Observați următorul program și încercați să preziceți valorile finale ale variabilelor sale.
 
-<table>
-  <tr>
-    <td>let a = 2;
+```javascript
+  
+    let a = 2;
 a -= 1;
 a++;
 let b = 8;
@@ -342,9 +352,9 @@ const d = a * b + b;
 const e = a * (b + b);
 const f = a * b / a;
 const g = b / a * a;
-console.log(a, b, c, d, e, f, g);</td>
-  </tr>
-</table>
+console.log(a, b, c, d, e, f, g);
+  
+```
 
 
 Verificați-vă predicția executând codul.
@@ -357,28 +367,28 @@ Scrieți un program care întreabă utilizatorul pentru un preț fără TVA. Dup
 
 Scrieți un program care solicită o temperatură în grade Celsius, apoi o afișează în grade Fahrenheit.
 
-<table>
-  <tr>
-    <td>Conversia între scale este dată de formula: [°F] = [°C] x 9/5 + 32.</td>
-  </tr>
-</table>
+```javascript
+  
+    Conversia între scale este dată de formula: [°F] = [°C] x 9/5 + 32.
+  
+```
 
 
 ### Schimbarea variabilelor
 
 Observați următorul program.
 
-<table>
-  <tr>
-    <td>let number1 = 5;
+```javascript
+  
+    let number1 = 5;
 let number2 = 3;
 
 // TODO: type your code here (and nowhere else!)
 
 console.log(number1); // Should show 3
-console.log(number2); // Should show 5</td>
-  </tr>
-</table>
+console.log(number2); // Should show 5
+  
+```
 
 
 Adăugați codul necesar pentru a schimba valorile variabilelor number1 și number2.
@@ -393,13 +403,13 @@ Până în prezent, codul din programele noastre a fost executat în mod cronolo
 
 Să presupunem că vrem să scriem un program care cere utilizatorului să introducă un număr și apoi să afișeze un mesaj dacă numărul este pozitiv. Aici este algoritmul corespunzător.
 
-<table>
-  <tr>
-    <td>Enter a number
+```javascript
+  
+    Enter a number
 If the number is positive
-    Display a message</td>
-  </tr>
-</table>
+    Display a message
+  
+```
 
 
 Mesajul trebuie afișat numai dacă numărul este pozitiv; acest lucru înseamnă că este "supus" unei condiții.
@@ -408,27 +418,27 @@ Mesajul trebuie afișat numai dacă numărul este pozitiv; acest lucru înseamn�
 
 Iată cum traduceți programul în JavaScript.
 
-<table>
-  <tr>
-    <td>const number = Number(prompt("Enter a number:"));
+```javascript
+  
+    const number = Number(prompt("Enter a number:"));
 if (number > 0) {
   console.log(`${number} is positive`);
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Comanda console.log(...) este executată doar în cazul în care numărul este pozitiv. Testați acest program pentru a vedea singur!
 
 Sintaxa condiționată arată astfel:
 
-<table>
-  <tr>
-    <td>if (condition) {
+```javascript
+  
+    if (condition) {
   // Code to run when the condition is true
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Parantezele de deschidere și închidere definește blocul de cod asociat cu o instrucțiune **if**. Această declarație reprezintă un test . Rezultă următoarele: "Dacă condiția este adevărată, atunci execută instrucțiunile din blocul de cod".
@@ -445,52 +455,52 @@ Am studiat deja numere și șiruri de caractere, două tipuri de date în JavaSc
 
 Orice expresie care produce o valoare booleană (fie true sau false) poate fi folosită ca o condiție într-o instrucțiune if. Dacă valoarea acestei expresii este adevărată, blocul de cod asociat cu aceasta este executat.
 
-<table>
-  <tr>
-    <td>if (true) {
+```javascript
+  
+    if (true) {
   // The condition for this if is always true
   // This block of code will always be executed
 }
 if (false) {
   // The condition for this if is always false
   // This block of code will never be executed
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Expresiile booleene pot fi create folosind operatorii de comparare prezentați în tabelul următor.
 
-<table>
-  <tr>
-    <td>Operator</td>
-    <td>Sens</td>
-  </tr>
-  <tr>
-    <td>===</td>
-    <td>Egal (strict)</td>
-  </tr>
-  <tr>
-    <td>!==</td>
-    <td>Nu este egal cu</td>
-  </tr>
-  <tr>
-    <td><</td>
-    <td>Mai mic ca</td>
-  </tr>
-  <tr>
-    <td><=</td>
-    <td>Mai mic sau egal cu</td>
-  </tr>
-  <tr>
-    <td>></td>
-    <td>Mai mare ca</td>
-  </tr>
-  <tr>
-    <td>>=</td>
-    <td>Mai mare sau egal cu</td>
-  </tr>
-</table>
+```javascript
+  
+    Operator
+    Sens
+  
+  
+    ===
+    Egal (strict)
+  
+  
+    !==
+    Nu este egal cu
+  
+  
+    <
+    Mai mic ca
+  
+  
+    <=
+    Mai mic sau egal cu
+  
+  
+    >
+    Mai mare ca
+  
+  
+    >=
+    Mai mare sau egal cu
+  
+```
 
 
 În alte limbaje de programare, operatorii de egalitate și inegalitate sunt == și  != . Acești operatori există și în JavaScript, dar este mai sigur să utilizați === și !== ([mai multe detalii](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)).
@@ -499,14 +509,14 @@ Este ușor de confundat operatorii de comparare ca === (sau ==) cu operatorul de
 
 Acum, hai să modificăm codul din exemplul de mai jos înlocuind > cu >= și să schimbăm mesajul, apoi să-l testam cu numărul 0.
 
-<table>
-  <tr>
-    <td>const number = Number(prompt("Enter a number:"));
+```javascript
+  
+    const number = Number(prompt("Enter a number:"));
 if (number >= 0) {
   console.log(`${number} is positive or zero`);
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Dacă input-ul utilizatorului este 0, mesajul apare va apărea în consolă, ceea ce înseamnă că condiția (number >= 0) a fost îndeplinită.
@@ -519,33 +529,33 @@ Veți dori adesea să executați codul într-un fel când ceva este adevărat ș
 
 Să ne îmbogățim eșantionul cu mesaje diferite, în funcție de numărul, dacă e pozitiv sau nu.
 
-<table>
-  <tr>
-    <td>const number = Number(prompt("Enter a number:"));
+```javascript
+  
+    const number = Number(prompt("Enter a number:"));
 if (number > 0) {
   console.log(`${number} is positive`);
 }
 else {
   console.log(`${number} is negative or zero`);
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Testați acest cod cu un număr pozitiv, un număr negativ și zero, în timp ce urmăriți rezultatul în consolă. Codul se execută diferit în funcție de condiția (number > 0) dacă este adevărată sau falsă.
 
 Sintaxa pentru crearea unei alternative este să adăugați un cuvântul cheie **else **după un terminarea declarației **if**.
 
-<table>
-  <tr>
-    <td>if (condition) {
+```javascript
+  
+    if (condition) {
   // Code to run when the condition is true
 }
 else {
   // Code to run when the condition is false
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Puteți traduce o declarație if/ else astfel: "Dacă condiția este adevărată, executați acest prim set de cod, altfel executați următorul set de cod". Numai unul dintre cele două blocuri de cod va fi executat.
@@ -554,9 +564,9 @@ Puteți traduce o declarație if/ else astfel: "Dacă condiția este adevărată
 
 Să mergem la următorul nivel și să afișăm un mesaj specific dacă numărul introdus este zero. Vedeți acest exemplu, care are un caz de test pozitiv, un caz de test negativ și o ultimă soluție a numărului fiind zero.
 
-<table>
-  <tr>
-    <td>const number = Number(prompt("Enter a number:"));
+```javascript
+  
+    const number = Number(prompt("Enter a number:"));
 if (number > 0) {
   console.log(`${number} is positive`);
 } else {
@@ -567,9 +577,9 @@ if (number > 0) {
     // number === 0
     console.log(`${number} is zero`);
   }
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Să încercăm să-l dibuim. Dacă blocul de cod asociat primei condiții **else **este rulat , atunci numărul trebuie să fie strict negativ sau zero. În interiorul acestui bloc, o a doua declarație if verifică dacă numărul este negativ. Dacă nu este, știm sigur că este zero.
@@ -605,15 +615,15 @@ Ca multe alte limbi, JavaScript suportă programarea cu obiecte. Acesta (Limbaju
 
 Aici este reprezentarea JavaScript a unui pix albastru Bic.
 
-<table>
-  <tr>
-    <td>const pen = {
+```javascript
+  
+    const pen = {
   type: "ballpoint",
   color: "blue",
   brand: "Bic"
-};</td>
-  </tr>
-</table>
+};
+  
+```
 
 
 Așa cum sa menționat mai devreme, un obiect JavaScript poate fi creat prin simpla setarea proprietăților sale într-o pereche de acolade: {...}. Fiecare proprietate este o pereche cheie / valoare. Acesta este numit obiect literal.
@@ -626,9 +636,9 @@ Codul de mai sus definește o variabilă numită **pen** a cărei valoare este u
 
 După crearea unui obiect, puteți accesa valoarea proprietăților sale utilizând notația punctului, cum ar fi myObject.myProperty.
 
-<table>
-  <tr>
-    <td>const pen = {
+```javascript
+  
+    const pen = {
   type: "ballpoint",
   color: "blue",
   brand: "Bic"
@@ -636,24 +646,24 @@ După crearea unui obiect, puteți accesa valoarea proprietăților sale utiliz�
 
 console.log(pen.type);  // "ballpoint"
 console.log(pen.color); // "blue"
-console.log(pen.brand); // "Bic"</td>
-  </tr>
-</table>
+console.log(pen.brand); // "Bic"
+  
+```
 
 
 Accesarea proprietății unui obiect este o **expresie **care produce o valoare. O astfel de expresie poate fi inclusă în expresii mai complexe. De exemplu, iată cum să afișăm proprietățile stiloului într-o singură declarație.
 
-<table>
-  <tr>
-    <td>const pen = {
+```javascript
+  
+    const pen = {
   type: "ballpoint",
   color: "blue",
   brand: "Bic"
 };
 
-console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
-  </tr>
-</table>
+console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);
+  
+```
 
 
 ![image alt text](image_8.png)
@@ -662,9 +672,9 @@ console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
 
 Odată ce un obiect este creat, puteți schimba valoarea proprietăților sale cu sintaxa myObject.myProperty = newValue.
 
-<table>
-  <tr>
-    <td>const pen = {
+```javascript
+  
+    const pen = {
   type: "ballpoint",
   color: "blue",
   brand: "Bic"
@@ -672,18 +682,18 @@ Odată ce un obiect este creat, puteți schimba valoarea proprietăților sale c
 
 pen.color = "red"; // Modify the pen color property
 
-console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
-  </tr>
-</table>
+console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);
+  
+```
 
 
 ![image alt text](image_9.png)
 
 JavaScript oferă chiar posibilitatea de a adăuga dinamic proprietăți noi unui obiect deja creat.
 
-<table>
-  <tr>
-    <td>const pen = {
+```javascript
+  
+    const pen = {
   type: "ballpoint",
   color: "blue",
   brand: "Bic"
@@ -691,9 +701,9 @@ JavaScript oferă chiar posibilitatea de a adăuga dinamic proprietăți noi unu
 
 pen.price = "2.5"; // Set the pen price property
 
-console.log(`My pen costs ${pen.price}`);</td>
-  </tr>
-</table>
+console.log(`My pen costs ${pen.price}`);
+  
+```
 
 
 ![image alt text](image_10.png)
@@ -718,15 +728,15 @@ Multe cărți și cursuri învață programarea orientată pe obiecte prin exemp
 
 Permiteți-mi să vă prezint pe Aurora, primul nostru personaj RPG.
 
-<table>
-  <tr>
-    <td>const aurora = {
+```javascript
+  
+    const aurora = {
   name: "Aurora",
   health: 150,
   strength: 25
-};</td>
-  </tr>
-</table>
+};
+  
+```
 
 
 Obiectul aurora are trei proprietăți: name, health și strength.
@@ -735,9 +745,9 @@ După cum puteți vedea, puteți atribui numere, șiruri și chiar alte obiecte 
 
 Aurora este pe cale să înceapă o serie de aventuri extraordinare, dintre care unele își vor actualiza atributele. Consultați exemplul următor.
 
-<table>
-  <tr>
-    <td>const aurora = {
+```javascript
+  
+    const aurora = {
   name: "Aurora",
   health: 150,
   strength: 25
@@ -751,9 +761,9 @@ aurora.health -= 20;
 // Aurora equips a strength necklace
 aurora.strength += 10;
 
-console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);</td>
-  </tr>
-</table>
+console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);
+  
+```
 
 
 ![image alt text](image_12.png)
@@ -766,9 +776,9 @@ console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.stre
 
 Observați următorul exemplu.
 
-<table>
-  <tr>
-    <td>const aurora = {
+```javascript
+  
+    const aurora = {
   name: "Aurora",
   health: 150,
   strength: 25
@@ -779,9 +789,9 @@ function describe(character) {
   return `${character.name} has ${character.health} health points and ${character.strength} as strength`;
 }
 
-console.log(describe(aurora));</td>
-  </tr>
-</table>
+console.log(describe(aurora));
+  
+```
 
 
 ![image alt text](image_13.png)
@@ -790,9 +800,9 @@ Funcția **describe()** are un obiect ca parametru. Accesează proprietățile o
 
 Mai jos este o abordare alternativă, folosind o proprietate denumită **describe()** în interiorul obiectului.
 
-<table>
-  <tr>
-    <td>const aurora = {
+```javascript
+  
+    const aurora = {
   name: "Aurora",
   health: 150,
   strength: 25,
@@ -804,9 +814,9 @@ Mai jos este o abordare alternativă, folosind o proprietate denumită **describ
   }
 };
 
-console.log(aurora.describe());</td>
-  </tr>
-</table>
+console.log(aurora.describe());
+  
+```
 
 
 ![image alt text](image_14.png)
@@ -819,11 +829,11 @@ Acum , obiectul nostru (aurora) are o nouă proprietate de care dispune: **descr
 
 Să ne uităm la ultima linie a exemplului nostru precedent.
 
-<table>
-  <tr>
-    <td>console.log(aurora.describe());</td>
-  </tr>
-</table>
+```javascript
+  
+    console.log(aurora.describe());
+  
+```
 
 
 Pentru a afișa descrierea caracterului, vom folosi expresia aurora.describe() în loc de describe(aurora). E o diferență *crucială*: 
@@ -840,9 +850,9 @@ Nu uitați de paranteze atunci când apelați o metodă, chiar dacă sunt goale.
 
 Acum priviți cu atenție corpul metodei describe() din obiectul nostru.
 
-<table>
-  <tr>
-    <td>const aurora = {
+```javascript
+  
+    const aurora = {
   name: "Aurora",
   health: 150,
   strength: 25,
@@ -852,9 +862,9 @@ Acum priviți cu atenție corpul metodei describe() din obiectul nostru.
     return `${this.name} has ${this.health} health points and ${this
       .strength} as strength`;
   }
-};</td>
-  </tr>
-</table>
+};
+  
+```
 
 
 Vezi un cuvânt cheie nou: **_this_**. Acest lucru este setat automat de JavaScript în interiorul unei metode și reprezintă obiectul pe care a fost apelată metoda .
@@ -877,9 +887,9 @@ Limbajul JavaScript are multe obiecte predefinite care deservesc diverse scopuri
 
 **Rezolvare:**
 
-<table>
-  <tr>
-    <td>// TODO: create the character object here
+```javascript
+  
+    // TODO: create the character object here
 const aurora = {
   name: "Aurora",
   health: 150,
@@ -891,14 +901,14 @@ const aurora = {
     return `${this.name} has ${this.health} health points, ${this
       .strength} as strength and ${this.xp} experience`;
   }
-};</td>
-  </tr>
-</table>
+};
+  
+```
 
 
-<table>
-  <tr>
-    <td>// Aurora is harmed by an arrow
+```javascript
+  
+    // Aurora is harmed by an arrow
 aurora.health -= 20;
 
 // Aurora equips a strength necklace
@@ -907,9 +917,9 @@ aurora.strength += 10;
 // Aurora learn a new skill
 aurora.xp += 15;
 
-console.log(aurora.describe());</td>
-  </tr>
-</table>
+console.log(aurora.describe());
+  
+```
 
 
 ![image alt text](image_15.png)
@@ -920,9 +930,9 @@ Finalizați următorul program pentru a adăuga definiția obiectului **_dog_**.
 
 Rezolvare (între TODO si console.log)
 
-<table>
-  <tr>
-    <td>// TODO: create the dog object here
+```javascript
+  
+    // TODO: create the dog object here
 
 const dog = {
     name: "Jessie",
@@ -934,9 +944,9 @@ const dog = {
 };
 
 console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
-console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);</td>
-  </tr>
-</table>
+console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);
+  
+```
 
 
 ![image alt text](image_16.png)
@@ -945,9 +955,9 @@ console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);</td>
 
 Finalizați următorul program pentru a adăuga definiția obiectului **circle**. Valoarea razei sale este introdusă de utilizator.
 
-<table>
-  <tr>
-    <td>const r = Number(prompt("Enter the circle radius:"));
+```javascript
+  
+    const r = Number(prompt("Enter the circle radius:"));
 
 // TODO: create the circle object here
 const circle = {
@@ -960,9 +970,9 @@ const circle = {
 }
 
 console.log(`Its circumference is ${circle.circumference()}`);
-console.log(`Its area is ${circle.area()}`);</td>
-  </tr>
-</table>
+console.log(`Its area is ${circle.area()}`);
+  
+```
 
 
 ### Modelarea unui cont bancar
@@ -981,9 +991,9 @@ Utilizați acest obiect pentru a afișa descrierea acestuia, creditarea 250, deb
 
 Rezolvare:
 
-<table>
-  <tr>
-    <td>const account = {
+```javascript
+  
+    const account = {
     name: "Alex",
     balance: 0,
     credit(amount){
@@ -992,9 +1002,9 @@ Rezolvare:
     describe(){
         return `owner: ${this.name} has currently ${this.balance}`
     }
-};</td>
-  </tr>
-</table>
+};
+  
+```
 
 
 ![image alt text](image_17.png)
@@ -1009,30 +1019,30 @@ Imaginați-vă că doriți să creați o listă cu toate filmele pe care le-ați
 
 O soluție ar fi crearea mai multor variabile:
 
-<table>
-  <tr>
-    <td>const movie1 = "The Wolf of Wall Street";
+```javascript
+  
+    const movie1 = "The Wolf of Wall Street";
 const movie2 = "Zootopia";
 const movie3 = "Babysitting";
-// ...</td>
-  </tr>
-</table>
+// ...
+  
+```
 
 
 Dacă ești cinefil, te poți găsi cu prea multe variabile în programul tău. Cea mai proastă parte este că aceste variabile sunt complet independente unele de altele.
 
 O altă posibilitate este gruparea filmelor într-un obiect.
 
-<table>
-  <tr>
-    <td>const movies = {
+```javascript
+  
+    const movies = {
   movie1: "The Wolf of Wall Street",
   movie2: "Zootopia",
   movie3: "Babysitting",
   // ...
-};</td>
-  </tr>
-</table>
+};
+  
+```
 
 
 De data aceasta, datele sunt centralizate în obiectul numit  **movies**. Numele proprietățile sale ( movie1, movie2, movie3...) sunt, cu toate acestea, inutile și repetitive.
@@ -1049,22 +1059,22 @@ Din fericire, există într-adevăr o soluție: utilizați o matrice. O matrice 
 
 Iată cum să creați lista noastră de filme sub forma unei matrici.
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"]</td>
-  </tr>
-</table>
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"]
+  
+```
 
 
 Se creează o matrice cu o pereche de paranteze pătrate []. Totul din paranteze alcătuiește matricea.
 
 Puteți stoca diferite tipuri de elemente într-o matrice, inclusiv șiruri de caractere, numere, booleani și chiar obiecte.
 
-<table>
-  <tr>
-    <td>const elements = ["Hello", 7, { message: "Hi mom" }, true];</td>
-  </tr>
-</table>
+```javascript
+  
+    const elements = ["Hello", 7, { message: "Hi mom" }, true];
+  
+```
 
 
 Deoarece o matrice poate conține mai multe elemente, este bine să denumiți matricea la plural (de exemplu, movies).
@@ -1073,24 +1083,24 @@ Deoarece o matrice poate conține mai multe elemente, este bine să denumiți ma
 
 Numărul de elemente stocate într-o matrice se numește dimensiunea acesteia . Iată cum să o accesați.
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
-console.log(movies.length); // 3</td>
-  </tr>
-</table>
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies.length); // 3
+  
+```
 
 
 Accesați dimensiunea unui matrice prin proprietatea **length**, folosind notația punctului.
 
 Desigur, această proprietate **length** returnează 0 în cazul unei matrice goale.
 
-<table>
-  <tr>
-    <td>const emptyArray = []; // Create an empty array
-console.log(emptyArray.length); // 0</td>
-  </tr>
-</table>
+```javascript
+  
+    const emptyArray = []; // Create an empty array
+console.log(emptyArray.length); // 0
+  
+```
 
 
 ### Accesați un element dintr-o matrice
@@ -1103,24 +1113,24 @@ Iată cum ați putea reprezenta matricea movies:
 
 Puteți accesa un anumit element prin trecerea indexului său în paranteze drepte []:
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 console.log(movies[0]); // "The Wolf of Wall Street"
 console.log(movies[1]); // "Zootopia"
-console.log(movies[2]); // "Babysitting"</td>
-  </tr>
-</table>
+console.log(movies[2]); // "Babysitting"
+  
+```
 
 
 În JavaScript folosirea unui index nevalid pentru a accesa un element al matricei valoarea returnată e **undefined**.
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
-console.log(movies[3]); // undefined: last element is at index 2</td>
-  </tr>
-</table>
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies[3]); // undefined: last element is at index 2
+  
+```
 
 
 ### Iterarea peste o matrice
@@ -1129,64 +1139,64 @@ Există mai multe moduri de a răsfoi un element de matrice după element.
 
 Primul mod e să folosiți o buclă **for** după cum sa discutat anterior.
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 for (let i = 0; i < movies.length; i++) {
   console.log(movies[i]);
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Bucla **for **trece prin fiecare element din matrice începând cu indexul 0 tot drumul până la lungimea matricei minus 1, care este ultimul element .
 
 O altă modalitate este de a apela metoda forEach() pe matrice. Ia ca parametru o funcție care va fi aplicată fiecărui element din matrice.
 
-<table>
-  <tr>
-    <td>myArray.forEach(myElement => {
+```javascript
+  
+    myArray.forEach(myElement => {
   // Use myElement to access each array element one by one
-});</td>
-  </tr>
-</table>
+});
+  
+```
 
 
 Iată exemplul precedent, rescris cu această metodă și o funcție cu săgeată groasă (fat arrow function, adica acel "=>").
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.forEach(movie => {
   console.log(movie);
-});</td>
-  </tr>
-</table>
+});
+  
+```
 
 
 În timpul execuției, fiecare element de matrice este trecut ca parametru (numit movie în acest exemplu) la funcția anonimă asociată funcției forEach().
 
 În cele din urmă, puteți folosi buclele for-of, un tip special de buclă care se ocupă cu obiecte iterabile, cum ar fi matricele. Mai jos e sintaxa sa:
 
-<table>
-  <tr>
-    <td>for (const myElement of myArray) {
+```javascript
+  
+    for (const myElement of myArray) {
   // Use myElement to access each array element one by one
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 Consultați exemplul anterior scris cu o buclă for-of.
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 for (const movie of movies) {
   console.log(movie);
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 ## **Actualizarea conținutului matricei**
@@ -1195,53 +1205,53 @@ for (const movie of movies) {
 
 Nu mă minți: tocmai te-ai uitat la Ghostbusters încă o dată . Să îl adăugăm în listă. Iată cum putem să o facem:
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.push("Ghostbusters");
-console.log(movies[3]); // "Ghostbusters"</td>
-  </tr>
-</table>
+console.log(movies[3]); // "Ghostbusters"
+  
+```
 
 
 Adăugați un element nou într-o matrice cu metoda push(). Noul element care trebuie adăugat este trecut ca parametru al metodei. Acesta este introdus la sfârșitul matricei.
 
 Pentru a adăuga un element la începutul unei matrice, utilizați metoda unshift() în loc de push().
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.unshift("Pacific Rim");
-console.log(movies[0]); // "Pacific Rim"</td>
-  </tr>
-</table>
+console.log(movies[0]); // "Pacific Rim"
+  
+```
 
 
 ### Eliminarea unui element dintr-o matrice
 
 Puteți elimina ultimul element al unei matrice utilizând metoda pop().
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.pop(); // Remove the last array element
 console.log(movies.length); // 2
-console.log(movies[2]); // undefined</td>
-  </tr>
-</table>
+console.log(movies[2]); // undefined
+  
+```
 
 
 Alternativ, puteți utiliza metoda splice() cu doi parametri: primul este indicele de la care începeți să eliminați, iar al doilea este numărul de elemente pe care doriți să le eliminați.
 
-<table>
-  <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+```javascript
+  
+    const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.splice(0, 1); // Remove 1 element starting at index 0
 console.log(movies.length); // 2
 console.log(movies[0]); // "Zootopia"
-console.log(movies[1]); // "Babysitting"</td>
-  </tr>
-</table>
+console.log(movies[1]); // "Babysitting"
+  
+```
 
 
 ## **E vremea să programăm!**
@@ -1266,9 +1276,9 @@ Scrieți un program care:
 
 ### Rezolvare
 
-<table>
-  <tr>
-    <td>const musketeers = ["Athos", "Porthos", "Aramis"];
+```javascript
+  
+    const musketeers = ["Athos", "Porthos", "Aramis"];
 
 for (let i = 0; i < musketeers.length; i++) {
     console.log(musketeers[i]);    
@@ -1284,27 +1294,27 @@ musketeers.splice(2,1);
 
 for (const musketeer of musketeers) {
     console.log(musketeer);
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
 ### Sumă de valori
 
 Scrieți un program care creează următoarea matrice, apoi calculează și arată suma valorilor sale (42 în acest caz).
 
-<table>
-  <tr>
-    <td>const values = [3, 11, 7, 2, 9, 10];</td>
-  </tr>
-</table>
+```javascript
+  
+    const values = [3, 11, 7, 2, 9, 10];
+  
+```
 
 
 ### Rezolvare:
 
-<table>
-  <tr>
-    <td>const values = [3, 11, 7, 2, 9, 10];
+```javascript
+  
+    const values = [3, 11, 7, 2, 9, 10];
 var sum = 0;
 
 function sumValues(){
@@ -1314,27 +1324,27 @@ function sumValues(){
     return sum;
 }
 
-console.log(sumValues());</td>
-  </tr>
-</table>
+console.log(sumValues());
+  
+```
 
 
 ### Valoarea maximă a matricei
 
 Scrieți un program care creează următoarea matrice, apoi calculează și afișează valoarea maximă a matricei.
 
-<table>
-  <tr>
-    <td>const values = [3, 11, 7, 2, 9, 10];</td>
-  </tr>
-</table>
+```javascript
+  
+    const values = [3, 11, 7, 2, 9, 10];
+  
+```
 
 
 ### Rezolvare:
 
-<table>
-  <tr>
-    <td>const values = [3, 11, 7, 2, 9, 10];
+```javascript
+  
+    const values = [3, 11, 7, 2, 9, 10];
 var max = values[0];
 
 for (let i = 0; i < values.length; i++) {
@@ -1342,18 +1352,18 @@ for (let i = 0; i < values.length; i++) {
         max = values[i];
     }    
 }
-console.log(max);</td>
-  </tr>
-</table>
+console.log(max);
+  
+```
 
 
 ### Lista cuvintelor
 
 Scrieți un program care îi cere utilizatorului un cuvânt până la scrierea cuvântului "stop" de către utilizator. Programul arată apoi fiecare dintre aceste cuvinte, cu excepția "stop"
 
-<table>
-  <tr>
-    <td>var words = [];
+```javascript
+  
+    var words = [];
 var userInput = [];
 
 for (let i = 0; i < words.length + 1; i++) {
@@ -1367,8 +1377,8 @@ for (let i = 0; i < words.length + 1; i++) {
         console.log(words.length);
         i = words.length + 1;
     }
-}</td>
-  </tr>
-</table>
+}
+  
+```
 
 
