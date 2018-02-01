@@ -46,26 +46,23 @@ Un program de calculator stochează date utilizând variabile. O variabilă este
 
 O variabilă are trei proprietăți principale:
 
-* **Numele **ei, care o identifică. Numele unei variabile poate conține litere mari și mici, numere (nu în prima poziție) și caractere precum semnul dolarului ($) sau bară jos (_).
+* **Numele** ei, care o identifică. Numele unei variabile poate conține litere mari și mici, numere (nu în prima poziție) și caractere precum semnul dolarului ($) sau bară jos (_).
 
-* **Valoarea **sa, care este informația stocată în variabilă.
+* **Valoarea** sa, care este informația stocată în variabilă.
 
-* **Tipul **său, care determină rolul și acțiunile disponibile / aplicabile pentru variabilă.
+* **Tipul** său, care determină rolul și acțiunile disponibile / aplicabile pentru variabilă.
 
-În JavaScript nu trebuiesc definite explicit tipurile de variabile. Tipul său este dedus din valoarea stocată în variabilă și se poate schimba în timp ce programul rulează. De aceea spunem că JavaScript este un** limbaj scris dinamic**. Alte limbaje, cum ar fi C sau Java, necesită întotdeauna definirea tipurilor de variabile. Aceasta se numește **scriere statică **.
+În JavaScript nu trebuiesc definite explicit tipurile de variabile. Tipul său este dedus din valoarea stocată în variabilă și se poate schimba în timp ce programul rulează. De aceea spunem că JavaScript este un** limbaj scris dinamic**. Alte limbaje, cum ar fi C sau Java, necesită întotdeauna definirea tipurilor de variabile. Aceasta se numește **scriere statică**.
 
 ## **Declararea unei variabile**
 
 Înainte de a putea stoca informații într-o variabilă, trebuie să o creați! Crearea ei se numește declararea unei variabile. Declararea unei variabile înseamnă că calculatorul își rezervă memorie în care să stocheze variabila. Programul poate citi sau scrie date în această zonă de memorie prin manipularea variabilei.
 
 Iată un exemplu de cod care declară o variabilă și afișează conținutul acesteia:
-
-<table>
-  <tr>
-    <td>let a;console.log(a);</td>
-  </tr>
-</table>
-
+```javascript
+let a;
+console.log(a);
+```
 
 În JavaScript, declarați o variabilă cu cuvântul cheie **let** urmat de numele variabilei. În acest exemplu, este apelată variabila creată a.
 
@@ -83,12 +80,11 @@ Rețineți că rezultatul este **undefined**. Acesta este un tip special al Java
 
 Consultați exemplul de mai jos:
 
-<table>
-  <tr>
-    <td>let a;a = 3.14;console.log(a);</td>
-  </tr>
-</table>
-
+```javascript
+let a;
+a = 3.14;
+console.log(a);
+```
 
 ![image alt text](image_3.png)
 
@@ -98,12 +94,10 @@ Aveți grijă să nu confundați operatorul de asignare, atribuire = cu egalitat
 
 De asemenea, puteți combina declararea unei variabile și atribuirea unei valori într-o singură linie. Doar conștientizați că, în această linie, faceți două lucruri simultan:
 
-<table>
-  <tr>
-    <td>let a = 3.14;console.log(a);</td>
-  </tr>
-</table>
-
+```javascript
+let a = 3.14;
+console.log(a);
+```
 
 ## **Declarând o variabilă constantă**
 
@@ -111,7 +105,8 @@ Dacă valoarea inițială a unei variabile nu se va schimba niciodată pe toată
 
 <table>
   <tr>
-    <td>const a = 3.14; // The value of a cannot be modifieda = 6.28;       // Impossible!</td>
+    <td>const a = 3.14; // The value of a cannot be modified
+a = 6.28;       // Impossible!</td>
   </tr>
 </table>
 
@@ -126,7 +121,10 @@ De asemenea, puteți mări sau micșora valoarea unui număr cu += și ++. Acest
 
 <table>
   <tr>
-    <td>let b = 0;      // b contains 0b += 1;         // b contains 1b++;            // b contains 2console.log(b); // Shows 2</td>
+    <td>let b = 0;      // b contains 0
+b += 1;         // b contains 1
+b++;            // b contains 2
+console.log(b); // Shows 2</td>
   </tr>
 </table>
 
@@ -137,7 +135,13 @@ Domeniul de aplicare al unei variabile este acea parte a programului în care va
 
 <table>
   <tr>
-    <td>let nb1 = 0;{  nb1 = 1; // OK : nb1 is declared in the parent block  const nb2 = 0;}console.log(nb1); // OK : nb1 is declared in the current blockconsole.log(nb2); // Error! nb2 is not visible here</td>
+    <td>let nb1 = 0;
+{
+  nb1 = 1; // OK : nb1 is declared in the parent block
+  const nb2 = 0;
+}
+console.log(nb1); // OK : nb1 is declared in the current block
+console.log(nb2); // Error! nb2 is not visible here</td>
   </tr>
 </table>
 
@@ -148,7 +152,13 @@ O expresie este o bucată de cod care produce o valoare. O expresie este creată
 
 <table>
   <tr>
-    <td>// 3 is an expression whose value is 3const c = 3;// c is an expression whose value is the value of c (3 here)let d = c;// (d + 1) is an expression whose value is d's + 1 (4 here)d = d + 1; // d now contains the value 4console.log(d); // Show 4</td>
+    <td>// 3 is an expression whose value is 3
+const c = 3;
+// c is an expression whose value is the value of c (3 here)
+let d = c;
+// (d + 1) is an expression whose value is d's + 1 (4 here)
+d = d + 1; // d now contains the value 4
+console.log(d); // Show 4</td>
   </tr>
 </table>
 
@@ -157,7 +167,8 @@ Prioritatea operatorilor în interiorul unei expresii este aceeași ca în matem
 
 <table>
   <tr>
-    <td>let e = 3 + 2 * 4; // e contains 11 (3 + 8)e = (3 + 2) * 4;   // e contains 20 (5 * 4)</td>
+    <td>let e = 3 + 2 * 4; // e contains 11 (3 + 8)
+e = (3 + 2) * 4;   // e contains 20 (5 * 4)</td>
   </tr>
 </table>
 
@@ -168,7 +179,11 @@ Acest lucru este adesea folosit pentru a crea șiruri care conțin valorile unor
 
 <table>
   <tr>
-    <td>const country = "France";console.log(`I live in ${country}`); // Show "I live in France"const x = 3;const y = 7;console.log(`${x} + ${y} = ${x + y}`); // Show "3 + 7 = 10"</td>
+    <td>const country = "France";
+console.log(`I live in ${country}`); // Show "I live in France"
+const x = 3;
+const y = 7;
+console.log(`${x} + ${y} = ${x + y}`); // Show "3 + 7 = 10"</td>
   </tr>
 </table>
 
@@ -179,7 +194,9 @@ Evaluarea unei expresii poate avea ca rezultat conversii de tip. Acestea se nume
 
 <table>
   <tr>
-    <td>const f = 100;// Show "Variable f contains the value 100"console.log("Variable f contains the value " + f);</td>
+    <td>const f = 100;
+// Show "Variable f contains the value 100"
+console.log("Variable f contains the value " + f);</td>
   </tr>
 </table>
 
@@ -188,7 +205,8 @@ JavaScript este extrem de tolerant în ceea ce privește conversia de tip. Cu to
 
 <table>
   <tr>
-    <td>const g = "five" * 2;console.log(g); // Show NaN</td>
+    <td>const g = "five" * 2;
+console.log(g); // Show NaN</td>
   </tr>
 </table>
 
@@ -197,7 +215,10 @@ Uneori veți dori să convertiți valoarea altui tip. Aceasta se numește conver
 
 <table>
   <tr>
-    <td>const h = "5";console.log(h + 1); // Concatenation: show the string "51"const i = Number("5");console.log(i + 1); // Numerical addition: show the number 6</td>
+    <td>const h = "5";
+console.log(h + 1); // Concatenation: show the string "51"
+const i = Number("5");
+console.log(i + 1); // Numerical addition: show the number 6</td>
   </tr>
 </table>
 
@@ -210,7 +231,8 @@ Odată ce începeți să utilizați variabilele, puteți scrie programe care fac
 
 <table>
   <tr>
-    <td>const name = prompt("Enter your first name:");alert(`Hello, ${name}`);</td>
+    <td>const name = prompt("Enter your first name:");
+alert(`Hello, ${name}`);</td>
   </tr>
 </table>
 
@@ -235,7 +257,10 @@ console.log() poate afișa simultan câteva valori separate prin virgulă.
 
 <table>
   <tr>
-    <td>const temp1 = 36.9;const temp2 = 37.6;const temp3 = 37.1;console.log(temp1, temp2, temp3); // Show "36.9 37.6 37.1"</td>
+    <td>const temp1 = 36.9;
+const temp2 = 37.6;
+const temp3 = 37.1;
+console.log(temp1, temp2, temp3); // Show "36.9 37.6 37.1"</td>
   </tr>
 </table>
 
@@ -246,7 +271,8 @@ Indiferent de datele introduse, prompt()comanda întoarce întotdeauna o valoare
 
 <table>
   <tr>
-    <td>const input = prompt("Enter a number:"); // input's type is stringconst nb = Number(input); // nb's type is number</td>
+    <td>const input = prompt("Enter a number:"); // input's type is string
+const nb = Number(input); // nb's type is number</td>
   </tr>
 </table>
 
@@ -270,14 +296,20 @@ Cu toate acestea, numirea variabilelor poate face codul mult mai ușor de citit.
 
 <table>
   <tr>
-    <td>const a = 5.5;const b = 3.14;const c = 2 * a * b;console.log(c);</td>
+    <td>const a = 5.5;
+const b = 3.14;
+const c = 2 * a * b;
+console.log(c);</td>
   </tr>
 </table>
 
 
 <table>
   <tr>
-    <td>const radius = 5.5;const pi = 3.14;const perimeter = 2 * pi * radius;console.log(perimeter);</td>
+    <td>const radius = 5.5;
+const pi = 3.14;
+const perimeter = 2 * pi * radius;
+console.log(perimeter);</td>
   </tr>
 </table>
 
@@ -300,7 +332,17 @@ Observați următorul program și încercați să preziceți valorile finale ale
 
 <table>
   <tr>
-    <td>let a = 2;a -= 1;a++;let b = 8;b += 2;const c = a + b * b;const d = a * b + b;const e = a * (b + b);const f = a * b / a;const g = b / a * a;console.log(a, b, c, d, e, f, g);</td>
+    <td>let a = 2;
+a -= 1;
+a++;
+let b = 8;
+b += 2;
+const c = a + b * b;
+const d = a * b + b;
+const e = a * (b + b);
+const f = a * b / a;
+const g = b / a * a;
+console.log(a, b, c, d, e, f, g);</td>
   </tr>
 </table>
 
@@ -328,7 +370,13 @@ Observați următorul program.
 
 <table>
   <tr>
-    <td>let number1 = 5;let number2 = 3;// TODO: type your code here (and nowhere else!)console.log(number1); // Should show 3console.log(number2); // Should show 5</td>
+    <td>let number1 = 5;
+let number2 = 3;
+
+// TODO: type your code here (and nowhere else!)
+
+console.log(number1); // Should show 3
+console.log(number2); // Should show 5</td>
   </tr>
 </table>
 
@@ -347,7 +395,9 @@ Să presupunem că vrem să scriem un program care cere utilizatorului să intro
 
 <table>
   <tr>
-    <td>Enter a numberIf the number is positive    Display a message</td>
+    <td>Enter a number
+If the number is positive
+    Display a message</td>
   </tr>
 </table>
 
@@ -360,7 +410,10 @@ Iată cum traduceți programul în JavaScript.
 
 <table>
   <tr>
-    <td>const number = Number(prompt("Enter a number:"));if (number > 0) {  console.log(`${number} is positive`);}</td>
+    <td>const number = Number(prompt("Enter a number:"));
+if (number > 0) {
+  console.log(`${number} is positive`);
+}</td>
   </tr>
 </table>
 
@@ -371,7 +424,9 @@ Sintaxa condiționată arată astfel:
 
 <table>
   <tr>
-    <td>if (condition) {  // Code to run when the condition is true}</td>
+    <td>if (condition) {
+  // Code to run when the condition is true
+}</td>
   </tr>
 </table>
 
@@ -392,7 +447,14 @@ Orice expresie care produce o valoare booleană (fie true sau false) poate fi fo
 
 <table>
   <tr>
-    <td>if (true) {  // The condition for this if is always true  // This block of code will always be executed}if (false) {  // The condition for this if is always false  // This block of code will never be executed}</td>
+    <td>if (true) {
+  // The condition for this if is always true
+  // This block of code will always be executed
+}
+if (false) {
+  // The condition for this if is always false
+  // This block of code will never be executed
+}</td>
   </tr>
 </table>
 
@@ -439,7 +501,10 @@ Acum, hai să modificăm codul din exemplul de mai jos înlocuind > cu >= și s�
 
 <table>
   <tr>
-    <td>const number = Number(prompt("Enter a number:"));if (number >= 0) {  console.log(`${number} is positive or zero`);}</td>
+    <td>const number = Number(prompt("Enter a number:"));
+if (number >= 0) {
+  console.log(`${number} is positive or zero`);
+}</td>
   </tr>
 </table>
 
@@ -456,7 +521,13 @@ Să ne îmbogățim eșantionul cu mesaje diferite, în funcție de numărul, da
 
 <table>
   <tr>
-    <td>const number = Number(prompt("Enter a number:"));if (number > 0) {  console.log(`${number} is positive`);}else {  console.log(`${number} is negative or zero`);}</td>
+    <td>const number = Number(prompt("Enter a number:"));
+if (number > 0) {
+  console.log(`${number} is positive`);
+}
+else {
+  console.log(`${number} is negative or zero`);
+}</td>
   </tr>
 </table>
 
@@ -467,7 +538,12 @@ Sintaxa pentru crearea unei alternative este să adăugați un cuvântul cheie *
 
 <table>
   <tr>
-    <td>if (condition) {  // Code to run when the condition is true}else {  // Code to run when the condition is false}</td>
+    <td>if (condition) {
+  // Code to run when the condition is true
+}
+else {
+  // Code to run when the condition is false
+}</td>
   </tr>
 </table>
 
@@ -480,7 +556,18 @@ Să mergem la următorul nivel și să afișăm un mesaj specific dacă numărul
 
 <table>
   <tr>
-    <td>const number = Number(prompt("Enter a number:"));if (number > 0) {  console.log(`${number} is positive`);} else {  // number <= 0  if (number < 0) {    console.log(`${number} is negative`);  } else {    // number === 0    console.log(`${number} is zero`);  }}</td>
+    <td>const number = Number(prompt("Enter a number:"));
+if (number > 0) {
+  console.log(`${number} is positive`);
+} else {
+  // number <= 0
+  if (number < 0) {
+    console.log(`${number} is negative`);
+  } else {
+    // number === 0
+    console.log(`${number} is zero`);
+  }
+}</td>
   </tr>
 </table>
 
@@ -509,7 +596,8 @@ Programarea orientată pe obiecte (OOP pe scurt) este o modalitate de a scrie pr
 
 OOP modifică modul în care este scris și organizat un program. Până acum, ați scris cod bazat pe funcții, numit uneori programare procedurală . Acum, să descoperim cum să scriem cod orientat pe obiecte.
 
-## **JavaScript și obiecte**
+## **
+JavaScript și obiecte**
 
 Ca multe alte limbi, JavaScript suportă programarea cu obiecte. Acesta (Limbajul JavaScript) oferă un număr de obiecte predefinite, permițându-vă, de asemenea, să vă creați propriul dumneavoastră obiect.
 
@@ -519,7 +607,11 @@ Aici este reprezentarea JavaScript a unui pix albastru Bic.
 
 <table>
   <tr>
-    <td>const pen = {  type: "ballpoint",  color: "blue",  brand: "Bic"};</td>
+    <td>const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};</td>
   </tr>
 </table>
 
@@ -536,7 +628,15 @@ După crearea unui obiect, puteți accesa valoarea proprietăților sale utiliz�
 
 <table>
   <tr>
-    <td>const pen = {  type: "ballpoint",  color: "blue",  brand: "Bic"};console.log(pen.type);  // "ballpoint"console.log(pen.color); // "blue"console.log(pen.brand); // "Bic"</td>
+    <td>const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};
+
+console.log(pen.type);  // "ballpoint"
+console.log(pen.color); // "blue"
+console.log(pen.brand); // "Bic"</td>
   </tr>
 </table>
 
@@ -545,7 +645,13 @@ Accesarea proprietății unui obiect este o **expresie **care produce o valoare.
 
 <table>
   <tr>
-    <td>const pen = {  type: "ballpoint",  color: "blue",  brand: "Bic"};console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
+    <td>const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};
+
+console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
   </tr>
 </table>
 
@@ -558,7 +664,15 @@ Odată ce un obiect este creat, puteți schimba valoarea proprietăților sale c
 
 <table>
   <tr>
-    <td>const pen = {  type: "ballpoint",  color: "blue",  brand: "Bic"};pen.color = "red"; // Modify the pen color propertyconsole.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
+    <td>const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};
+
+pen.color = "red"; // Modify the pen color property
+
+console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);</td>
   </tr>
 </table>
 
@@ -569,7 +683,15 @@ JavaScript oferă chiar posibilitatea de a adăuga dinamic proprietăți noi unu
 
 <table>
   <tr>
-    <td>const pen = {  type: "ballpoint",  color: "blue",  brand: "Bic"};pen.price = "2.5"; // Set the pen price propertyconsole.log(`My pen costs ${pen.price}`);</td>
+    <td>const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};
+
+pen.price = "2.5"; // Set the pen price property
+
+console.log(`My pen costs ${pen.price}`);</td>
   </tr>
 </table>
 
@@ -598,7 +720,11 @@ Permiteți-mi să vă prezint pe Aurora, primul nostru personaj RPG.
 
 <table>
   <tr>
-    <td>const aurora = {  name: "Aurora",  health: 150,  strength: 25};</td>
+    <td>const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25
+};</td>
   </tr>
 </table>
 
@@ -611,7 +737,21 @@ Aurora este pe cale să înceapă o serie de aventuri extraordinare, dintre care
 
 <table>
   <tr>
-    <td>const aurora = {  name: "Aurora",  health: 150,  strength: 25};console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);// Aurora is harmed by an arrowaurora.health -= 20;// Aurora equips a strength necklaceaurora.strength += 10;console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);</td>
+    <td>const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25
+};
+
+console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);
+
+// Aurora is harmed by an arrow
+aurora.health -= 20;
+
+// Aurora equips a strength necklace
+aurora.strength += 10;
+
+console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);</td>
   </tr>
 </table>
 
@@ -628,7 +768,18 @@ Observați următorul exemplu.
 
 <table>
   <tr>
-    <td>const aurora = {  name: "Aurora",  health: 150,  strength: 25};// Return the character descriptionfunction describe(character) {  return `${character.name} has ${character.health} health points and ${character.strength} as strength`;}console.log(describe(aurora));</td>
+    <td>const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25
+};
+
+// Return the character description
+function describe(character) {
+  return `${character.name} has ${character.health} health points and ${character.strength} as strength`;
+}
+
+console.log(describe(aurora));</td>
   </tr>
 </table>
 
@@ -641,7 +792,19 @@ Mai jos este o abordare alternativă, folosind o proprietate denumită **describ
 
 <table>
   <tr>
-    <td>const aurora = {  name: "Aurora",  health: 150,  strength: 25,  // Return the character description  describe() {    return `${this.name} has ${this.health} health points and ${this      .strength} as strength`;  }};console.log(aurora.describe());</td>
+    <td>const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25,
+
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points and ${this
+      .strength} as strength`;
+  }
+};
+
+console.log(aurora.describe());</td>
   </tr>
 </table>
 
@@ -679,7 +842,17 @@ Acum priviți cu atenție corpul metodei describe() din obiectul nostru.
 
 <table>
   <tr>
-    <td>const aurora = {  name: "Aurora",  health: 150,  strength: 25,  // Return the character description  describe() {    return `${this.name} has ${this.health} health points and ${this      .strength} as strength`;  }};</td>
+    <td>const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25,
+
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points and ${this
+      .strength} as strength`;
+  }
+};</td>
   </tr>
 </table>
 
@@ -706,14 +879,35 @@ Limbajul JavaScript are multe obiecte predefinite care deservesc diverse scopuri
 
 <table>
   <tr>
-    <td>// TODO: create the character object hereconst aurora = {  name: "Aurora",  health: 150,  strength: 25,  xp: 0,  // Return the character description  describe() {    return `${this.name} has ${this.health} health points, ${this      .strength} as strength and ${this.xp} experience`;  }};</td>
+    <td>// TODO: create the character object here
+const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25,
+  xp: 0,
+
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} experience`;
+  }
+};</td>
   </tr>
 </table>
 
 
 <table>
   <tr>
-    <td>// Aurora is harmed by an arrowaurora.health -= 20;// Aurora equips a strength necklaceaurora.strength += 10;// Aurora learn a new skillaurora.xp += 15;console.log(aurora.describe());</td>
+    <td>// Aurora is harmed by an arrow
+aurora.health -= 20;
+
+// Aurora equips a strength necklace
+aurora.strength += 10;
+
+// Aurora learn a new skill
+aurora.xp += 15;
+
+console.log(aurora.describe());</td>
   </tr>
 </table>
 
@@ -728,7 +922,19 @@ Rezolvare (între TODO si console.log)
 
 <table>
   <tr>
-    <td>// TODO: create the dog object hereconst dog = {    name: "Jessie",    species: "Shih Tzu",    size: 75,    bark() {        return "Grrr! Grrr!"    }};console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);</td>
+    <td>// TODO: create the dog object here
+
+const dog = {
+    name: "Jessie",
+    species: "Shih Tzu",
+    size: 75,
+    bark() {
+        return "Grrr! Grrr!"
+    }
+};
+
+console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
+console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);</td>
   </tr>
 </table>
 
@@ -741,7 +947,20 @@ Finalizați următorul program pentru a adăuga definiția obiectului **circle**
 
 <table>
   <tr>
-    <td>const r = Number(prompt("Enter the circle radius:"));// TODO: create the circle object hereconst circle = {    circumference(){        return 2 * Math.PI * r;    },    area(){        return Math.PI * r * r;    }}console.log(`Its circumference is ${circle.circumference()}`);console.log(`Its area is ${circle.area()}`);</td>
+    <td>const r = Number(prompt("Enter the circle radius:"));
+
+// TODO: create the circle object here
+const circle = {
+    circumference(){
+        return 2 * Math.PI * r;
+    },
+    area(){
+        return Math.PI * r * r;
+    }
+}
+
+console.log(`Its circumference is ${circle.circumference()}`);
+console.log(`Its area is ${circle.area()}`);</td>
   </tr>
 </table>
 
@@ -764,7 +983,16 @@ Rezolvare:
 
 <table>
   <tr>
-    <td>const account = {    name: "Alex",    balance: 0,    credit(amount){        this.balance += amount;    },    describe(){        return `owner: ${this.name} has currently ${this.balance}`    }};</td>
+    <td>const account = {
+    name: "Alex",
+    balance: 0,
+    credit(amount){
+        this.balance += amount;
+    },
+    describe(){
+        return `owner: ${this.name} has currently ${this.balance}`
+    }
+};</td>
   </tr>
 </table>
 
@@ -783,7 +1011,10 @@ O soluție ar fi crearea mai multor variabile:
 
 <table>
   <tr>
-    <td>const movie1 = "The Wolf of Wall Street";const movie2 = "Zootopia";const movie3 = "Babysitting";// ...</td>
+    <td>const movie1 = "The Wolf of Wall Street";
+const movie2 = "Zootopia";
+const movie3 = "Babysitting";
+// ...</td>
   </tr>
 </table>
 
@@ -794,7 +1025,12 @@ O altă posibilitate este gruparea filmelor într-un obiect.
 
 <table>
   <tr>
-    <td>const movies = {  movie1: "The Wolf of Wall Street",  movie2: "Zootopia",  movie3: "Babysitting",  // ...};</td>
+    <td>const movies = {
+  movie1: "The Wolf of Wall Street",
+  movie2: "Zootopia",
+  movie3: "Babysitting",
+  // ...
+};</td>
   </tr>
 </table>
 
@@ -839,7 +1075,8 @@ Numărul de elemente stocate într-o matrice se numește dimensiunea acesteia . 
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];console.log(movies.length); // 3</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies.length); // 3</td>
   </tr>
 </table>
 
@@ -850,7 +1087,8 @@ Desigur, această proprietate **length** returnează 0 în cazul unei matrice go
 
 <table>
   <tr>
-    <td>const emptyArray = []; // Create an empty arrayconsole.log(emptyArray.length); // 0</td>
+    <td>const emptyArray = []; // Create an empty array
+console.log(emptyArray.length); // 0</td>
   </tr>
 </table>
 
@@ -867,7 +1105,10 @@ Puteți accesa un anumit element prin trecerea indexului său în paranteze drep
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];console.log(movies[0]); // "The Wolf of Wall Street"console.log(movies[1]); // "Zootopia"console.log(movies[2]); // "Babysitting"</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies[0]); // "The Wolf of Wall Street"
+console.log(movies[1]); // "Zootopia"
+console.log(movies[2]); // "Babysitting"</td>
   </tr>
 </table>
 
@@ -876,7 +1117,8 @@ Puteți accesa un anumit element prin trecerea indexului său în paranteze drep
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];console.log(movies[3]); // undefined: last element is at index 2</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies[3]); // undefined: last element is at index 2</td>
   </tr>
 </table>
 
@@ -889,7 +1131,10 @@ Primul mod e să folosiți o buclă **for** după cum sa discutat anterior.
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];for (let i = 0; i < movies.length; i++) {  console.log(movies[i]);}</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+for (let i = 0; i < movies.length; i++) {
+  console.log(movies[i]);
+}</td>
   </tr>
 </table>
 
@@ -900,7 +1145,9 @@ O altă modalitate este de a apela metoda forEach() pe matrice. Ia ca parametru 
 
 <table>
   <tr>
-    <td>myArray.forEach(myElement => {  // Use myElement to access each array element one by one});</td>
+    <td>myArray.forEach(myElement => {
+  // Use myElement to access each array element one by one
+});</td>
   </tr>
 </table>
 
@@ -909,7 +1156,10 @@ Iată exemplul precedent, rescris cu această metodă și o funcție cu săgeat�
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];movies.forEach(movie => {  console.log(movie);});</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.forEach(movie => {
+  console.log(movie);
+});</td>
   </tr>
 </table>
 
@@ -920,7 +1170,9 @@ Iată exemplul precedent, rescris cu această metodă și o funcție cu săgeat�
 
 <table>
   <tr>
-    <td>for (const myElement of myArray) {  // Use myElement to access each array element one by one}</td>
+    <td>for (const myElement of myArray) {
+  // Use myElement to access each array element one by one
+}</td>
   </tr>
 </table>
 
@@ -929,7 +1181,10 @@ Consultați exemplul anterior scris cu o buclă for-of.
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];for (const movie of movies) {  console.log(movie);}</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+for (const movie of movies) {
+  console.log(movie);
+}</td>
   </tr>
 </table>
 
@@ -942,7 +1197,9 @@ Nu mă minți: tocmai te-ai uitat la Ghostbusters încă o dată . Să îl adău
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];movies.push("Ghostbusters");console.log(movies[3]); // "Ghostbusters"</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.push("Ghostbusters");
+console.log(movies[3]); // "Ghostbusters"</td>
   </tr>
 </table>
 
@@ -953,7 +1210,9 @@ Pentru a adăuga un element la începutul unei matrice, utilizați metoda unshif
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];movies.unshift("Pacific Rim");console.log(movies[0]); // "Pacific Rim"</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.unshift("Pacific Rim");
+console.log(movies[0]); // "Pacific Rim"</td>
   </tr>
 </table>
 
@@ -964,7 +1223,10 @@ Puteți elimina ultimul element al unei matrice utilizând metoda pop().
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];movies.pop(); // Remove the last array elementconsole.log(movies.length); // 2console.log(movies[2]); // undefined</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.pop(); // Remove the last array element
+console.log(movies.length); // 2
+console.log(movies[2]); // undefined</td>
   </tr>
 </table>
 
@@ -973,7 +1235,11 @@ Alternativ, puteți utiliza metoda splice() cu doi parametri: primul este indice
 
 <table>
   <tr>
-    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];movies.splice(0, 1); // Remove 1 element starting at index 0console.log(movies.length); // 2console.log(movies[0]); // "Zootopia"console.log(movies[1]); // "Babysitting"</td>
+    <td>const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.splice(0, 1); // Remove 1 element starting at index 0
+console.log(movies.length); // 2
+console.log(movies[0]); // "Zootopia"
+console.log(movies[1]); // "Babysitting"</td>
   </tr>
 </table>
 
@@ -1002,7 +1268,23 @@ Scrieți un program care:
 
 <table>
   <tr>
-    <td>const musketeers = ["Athos", "Porthos", "Aramis"];for (let i = 0; i < musketeers.length; i++) {    console.log(musketeers[i]);    }musketeers.push("D'Artagnan");musketeers.forEach(musketeer => {    console.log(musketeer);});musketeers.splice(2,1);for (const musketeer of musketeers) {    console.log(musketeer);}</td>
+    <td>const musketeers = ["Athos", "Porthos", "Aramis"];
+
+for (let i = 0; i < musketeers.length; i++) {
+    console.log(musketeers[i]);    
+}
+
+musketeers.push("D'Artagnan");
+
+musketeers.forEach(musketeer => {
+    console.log(musketeer);
+});
+
+musketeers.splice(2,1);
+
+for (const musketeer of musketeers) {
+    console.log(musketeer);
+}</td>
   </tr>
 </table>
 
@@ -1022,7 +1304,17 @@ Scrieți un program care creează următoarea matrice, apoi calculează și arat
 
 <table>
   <tr>
-    <td>const values = [3, 11, 7, 2, 9, 10];var sum = 0;function sumValues(){    for (let i = 0; i < values.length; i++) {        sum += values[i];        }    return sum;}console.log(sumValues());</td>
+    <td>const values = [3, 11, 7, 2, 9, 10];
+var sum = 0;
+
+function sumValues(){
+    for (let i = 0; i < values.length; i++) {
+        sum += values[i];    
+    }
+    return sum;
+}
+
+console.log(sumValues());</td>
   </tr>
 </table>
 
@@ -1042,7 +1334,15 @@ Scrieți un program care creează următoarea matrice, apoi calculează și afi�
 
 <table>
   <tr>
-    <td>const values = [3, 11, 7, 2, 9, 10];var max = values[0];for (let i = 0; i < values.length; i++) {    if (values[i] > max) {        max = values[i];    }    }console.log(max);</td>
+    <td>const values = [3, 11, 7, 2, 9, 10];
+var max = values[0];
+
+for (let i = 0; i < values.length; i++) {
+    if (values[i] > max) {
+        max = values[i];
+    }    
+}
+console.log(max);</td>
   </tr>
 </table>
 
@@ -1053,7 +1353,21 @@ Scrieți un program care îi cere utilizatorului un cuvânt până la scrierea c
 
 <table>
   <tr>
-    <td>var words = [];var userInput = [];for (let i = 0; i < words.length + 1; i++) {    userInput[i] = prompt("Add words");    if( userInput[i] != "stop"){        words.push(userInput[i]);        console.log(words);    }    else {        console.log(i);        console.log(words.length);        i = words.length + 1;    }}</td>
+    <td>var words = [];
+var userInput = [];
+
+for (let i = 0; i < words.length + 1; i++) {
+    userInput[i] = prompt("Add words");
+    if( userInput[i] != "stop"){
+        words.push(userInput[i]);
+        console.log(words);
+    }
+    else {
+        console.log(i);
+        console.log(words.length);
+        i = words.length + 1;
+    }
+}</td>
   </tr>
 </table>
 
